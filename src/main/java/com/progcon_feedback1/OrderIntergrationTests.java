@@ -1,18 +1,22 @@
 package com.progcon_feedback1;
-
+package com.progcon_feedback1.repository;
 import com.progcon_feedback1.model.Order;
-import com.progcon_feedback1.repository.OrderRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Transactional
-public class OrderIntegrationTests {
+public class OrderIntergrationTests {
 
+
+@Repository
+public interface OrderRepository extends JpaRepository<Order, Long> {
+}
     @Autowired
     private OrderRepository orderRepository;
 
